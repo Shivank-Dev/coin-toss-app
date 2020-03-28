@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - Coin Toss App</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/index.js" async></script>
+</head>
+
+<body>
+    <h1 class="text-center mt-2 font-40">Coin Toss App</h1>
+    <p class="text-center mt-1 font-weight-bolder font-25" id="selectionText">Select either Heads or Tails</p>
+    <p id="winningText" class="text-center font-weight-bolder font-25 mt-1"></p>
+    <div class="row mt-1 mb-1 d-none" id="winning-counter-wrapper">
+        <p class="font-25" id="playerWinningCounter"></p>
+        <p class="ml-1 font-25" id="computerWinningCounter"></p>
+    </div>
+    <div class="row mt-1">
+        <button onclick="processResult('heads')">Heads</button>
+        <button class="ml-1" onclick="processResult('tails')">Tails</button>
+    </div>
+</body>
+
+</html>
