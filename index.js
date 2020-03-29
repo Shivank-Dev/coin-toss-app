@@ -1,5 +1,4 @@
-let playerWinningCounter = 0;
-let computerWinningCounter = 0;
+let playerWinningCounter = computerWinningCounter = 0;
 
 const initVariables = (playerSelection) => {
     const coin = ['heads', 'tails'];
