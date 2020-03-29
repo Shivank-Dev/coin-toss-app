@@ -1,25 +1,36 @@
 let playerWinningCounter = 0;
 let computerWinningCounter = 0;
 
-const processResult = (coinselection) => {
+const initVariables = (playerSelection) => {
     const coin = ['heads', 'tails'];
-    const computerSelection = getCoinResult(coin);
-    const selectionText = document.getElementById("selectionText");
-    const winningText = document.getElementById("winningText");
-    const oldComputerWinningCounter = document.getElementById("computerWinningCounter");
-    const oldPlayerWinningCounter = document.getElementById("playerWinningCounter");
-    const winningCounterWrapper = document.getElementById("winning-counter-wrapper");
-    selectionText.innerText = "Computer Selected " + computerSelection;
-    if (coinselection === computerSelection) {
+    const coinData = {
+        computerSelection: getCoinResult(coin),
+        playerSelection: playerSelection,
+        selectionText: document.getElementById("selectionText"),
+        winningText: document.getElementById("winningText"),
+        oldComputerWinningCounter: document.getElementById("computerWinningCounter"),
+        oldPlayerWinningCounter: document.getElementById("playerWinningCounter"),
+        winningCounterWrapper: document.getElementById("winning-counter-wrapper")
+    }
+    processResult(coinData);
+}
+
+const processResult = (coinData) => {
+    selectionText.innerText = "Computer Selected " + coinData.computerSelection;
+    if (coinData.playerSelection === coinData.computerSelection) {
         playerWinningCounter += 1;
-        winningText.innerText = "Player Wins";
+        coinData.winningText.innerText = "Player Wins";
     } else {
         computerWinningCounter += 1; 
-        winningText.innerText = "Computer Wins";
+        coinData.winningText.innerText = "Computer Wins";
     }
-    oldPlayerWinningCounter.innerText = "Player: " + playerWinningCounter;
-    oldComputerWinningCounter.innerText = "Computer: " + computerWinningCounter;
-    winningCounterWrapper.style.display = "flex";
+    bindDataToUi(coinData);
+}
+
+const bindDataToUi = (coinData) => {
+    coinData.oldPlayerWinningCounter.innerText = "Player: " + playerWinningCounter;
+    coinData.oldComputerWinningCounter.innerText = "Computer: " + computerWinningCounter;
+    coinData.winningCounterWrapper.style.display = "flex";
 }
 
 
