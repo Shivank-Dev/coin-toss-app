@@ -1,9 +1,8 @@
-
+let playerWinningCounter = 0;
+let computerWinningCounter = 0;
 
 const processResult = (coinselection) => {
     const coin = ['heads', 'tails'];
-    let playerWinningCounter = 0;
-    let computerWinningCounter = 0;
     const computerSelection = getCoinResult(coin);
     const selectionText = document.getElementById("selectionText");
     const winningText = document.getElementById("winningText");
