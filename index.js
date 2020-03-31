@@ -16,14 +16,12 @@ const initVariables = (playerSelection) => {
 
 const processResult = (coinData) => {
     selectionText.innerText = "Computer Selected " + coinData.computerSelection;
-    if (coinData.playerSelection === coinData.computerSelection) {
-        playerWinningCounter += 1;
-        coinData.winningText.innerText = "Player Wins";
-    } else {
-        computerWinningCounter += 1; 
-        coinData.winningText.innerText = "Computer Wins";
-    }
-    bindDataToUi(coinData);
+    coinData.playerSelection === coinData.computerSelection ?
+        (playerWinningCounter += 1,
+        coinData.winningText.innerText = "Player Wins") :
+        (computerWinningCounter += 1,
+        coinData.winningText.innerText = "Computer Wins");
+        bindDataToUi(coinData);
 }
 
 const bindDataToUi = (coinData) => {
