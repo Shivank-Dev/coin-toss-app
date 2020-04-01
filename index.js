@@ -15,7 +15,7 @@ const initVariables = (playerSelection) => {
 }
 
 const processResult = (coinData) => {
-    selectionText.innerText = "Computer Selected " + coinData.computerSelection;
+    selectionText.innerText = `Computer Selected ${coinData.computerSelection}`;
     coinData.playerSelection === coinData.computerSelection ?
         (playerWinningCounter += 1,
         coinData.winningText.innerText = "Player Wins") :
@@ -25,8 +25,8 @@ const processResult = (coinData) => {
 }
 
 const bindDataToUi = (coinData) => {
-    coinData.oldPlayerWinningCounter.innerText = "Player: " + playerWinningCounter;
-    coinData.oldComputerWinningCounter.innerText = "Computer: " + computerWinningCounter;
+    coinData.oldPlayerWinningCounter.innerText = `Player:  ${playerWinningCounter}`;
+    coinData.oldComputerWinningCounter.innerText = `Computer: ${computerWinningCounter}`;
     coinData.winningCounterWrapper.style.display = "flex";
 }
 
